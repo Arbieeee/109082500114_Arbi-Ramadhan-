@@ -138,7 +138,7 @@ Program ini digunakan untuk menerima input berupa bilangan bulat positif dengan 
 ### 3. Buatlah program yang dapat memberikan input dan output sbb.
 input : 3<br>
 output :<br>
-</pre>
+<pre>
 3 2 1 * 1 2 3
   2 1 * 1 2
     1 * 1
