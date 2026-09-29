@@ -143,6 +143,7 @@ output :<br>
   2 1 * 1 2
     1 * 1
       *
+      </pre>
 
 ```C++
 #include <iostream>
