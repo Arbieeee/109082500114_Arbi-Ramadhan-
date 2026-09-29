@@ -192,7 +192,7 @@ int main() {
 Program ini digunakan untuk menerima input berupa bilangan bulat positif dari pengguna untuk menentukan ukuran pola. Output program berupa pola segitiga terbalik simetris yang menampilkan deretan angka menurun di sisi kiri dan angka menaik di sisi kanan, dipisahkan oleh simbol bintang (*). Di program ini terdapat perulangan bersarang (nested loop) untuk mengatur jumlah baris, di mana loop bagian dalam digunakan untuk mencetak spasi agar pola rata kanan serta mencetak angka-angka tersebut.
 
 ## Kesimpulan
-...
+Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa sebelum kita mulai mengimplementasikan sebuah program, kita perlu memahami dulu konsep dasar bahasa C++. Contohnya pada unguided 1 diperlukan pemahaman tentang kondisional if-else untuk memvalidasi input agar hasilnya tidak error saat pembagian. Pada unguided 2, penggunaan array juga dapat membantu mempersingkat logika konversi angka. Terakhir, pada unguided 3 program menggunakan perulangan bersarang (nested loop) untuk mengatur pola spasi sesuai angka yang diinput oleh pengguna.
 
 ## Referensi
 [1] Tim Asisten Praktikum. (t.t.). Modul 1: Code Blocks IDE & Pengenalan Bahasa C++ (Bagian Pertama). Telkom University. 
