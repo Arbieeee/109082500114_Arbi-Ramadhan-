@@ -401,11 +401,11 @@ int main() {
 penjelasan unguided 2
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut :  arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55} Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini : 
-<br> --- Menu Program Array ---  
+--- Menu Program Array ---  
 • Tampilkan isi array  
-• cari nilai maksimum 
+• cari nilai maksimum
 • cari nilai minimum  
-• Hitung nilai rata - rata <br>
+• Hitung nilai rata - rata
 
 ```C++
 #include <iostream>
