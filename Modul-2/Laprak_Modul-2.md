@@ -2,29 +2,111 @@
 <p align="center">Arbi Ramadhan - 109082500114</p>
 
 ## Dasar Teori
-Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an berdasarkan C ANSI (American National Standard Institute) [1].
 
-### A. Dasar Pemrograman<br/>
+### A. Array <br/>
+Array adalah kumpulan data yang memiliki nama dan setiap elemennya bertipe data yang sama [1]. Sebuah array juga bisa dideklarasikan sekaligus saat dideklarasikan dengan cara nilai-nilai yang diinisialisasikan ditulis di antara kurung kurawal ```{}``` [2].
 
-#### 1. Struktur Program C++
-Struktur bahasa C++ selalu dimulai dari deklarasi library #include , definisi konstanta, tipe data, variabel, fungsi/prosedur, dan program utama int main()[1]. Elemen-elemen yang digunakan pada bahasa C++ sudah diatur sesuai dengan kaidah agar alur programnya berjalan dengan benar [2].
+#### 1. Array Satu Dimensi
+Array satu dimensi adalah array yang hanya terdiri dari satu baris data saja [1]. Umumnya, array datu dimensi ditulis ```tipe_data nama_var[ukuran]```
+Dalam bahasa C++, array disimpan dalam memori dengan lokasi yang berurutan [1]. Indeks pertama pada array dimulai dari 0 dan seterusnya  tergantung jumlah ukuran array yang dibuat [1]. Array satu dimensi ini biasanya mewakili bentuk suatu vektor [2].
 
-#### 2. Tipe Data dan Variabel
-Sama seperti bahasa pemrograman lain, variabel digunakan untuk menyimpan nilai pada program yang sedang berjalan [1]. Biasanya variabel dideklarasikan seperti tipe_data nama_variabel; contohnya (int a;). Terdapat juga konstanta untuk menyatakan nilai yang selalu tetap [1]. Biasanya untuk mendeklarasikan konstanta, perlu ditambahkan kata const di awal tipe variabel [1].
+#### 2. Array Dua Dimensi
+Array dua dimensi memiliki bentuk yang seperti tabel yang biasanya digunakan untuk menyimpan data yang terbagi menjadi dua bagian yaitu dimensi pertama dan dimensi kedua [1]. Cara penulisan array ini sebagai berikut.
+```
+int data_nilai[4][3]; // terdiri dari 4 baris 3 kolom
+nilai[2][0] = 10;     //menjelaskan bahwa array yang dimaksud berada pada baris berindeks 2 dan pada kolom berindeks 0.
+```
+Array dua dimensi biasanya mewakili bentuk suatu matriks atau tabel [2].
 
-### B. Input/Output<br/>
-Untuk menghasilkan output, perlu menggunakan fungsi cout dengan operator << untuk mencetak data/teks/konstanta/variabel [1]. Sedangkan untuk meminta input dari pengguna menggunakan fungsi cin dengan operator >> [1].
+#### 3. Array Berdimensi Banyak
+Pada dimensi ini, array yang mempunyai indeks lebih dari dua yang biasanya menyatakan dimensi dari array itu sendiri [1]. Array berdimensi banyak ini biasanya dideklararasikan sebagai berikut:
+```
+tipe_data nama_var[ukuran_1][ukuran_2]...[ukuran_n];
+```
 
-### C. Operator
-Operator digunakan untuk melakukan operasi/manipulasi/perhitungan dari variabel yang ada [1]. Terdapat beberapa contoh operator seperti operator aritmatika (+, -, *, /, %), operator assignment, operator logika, operator unary, operator sizeof, operator increment dan decrement[1]. Operator berfungsi untuk memproses suatu logika dalam program [2].
+### B. Pointer <br/>
 
-### D. Pemodifikasi Tipe
-Biasanya, pemodifikasian tipe ada diawal tipe data kecuali untuk void. Modifikasi tipe data diantaranya unsigned, short, dan long yang biasanya digunakan untuk mengubah jangkauan nilai suatu tipe data [1].
+#### 1. Data dan Memory
+Semua data yang ada digunakan oleh program komputer disimpan di dalam RAM komputer [1]. Memori bisa digambarkan sebagai sebuah array satu dimensi yang mempunyai ukuran sangat besar [1]. Setiap cell memory pasti memiliki indeks atau address sebgai identitasnya [1].
 
-### E.
+#### 2. Pointer dan Alamat
+Pointer adalah dasar dari tipe variabel yang bertipe integer dalam format bilangan heksadesimal yang biasanya digunakan untuk menyimpan alamat memori dari variabel yang lain sehingga pointer bisa mengakses nilai dari variabel yang alamatnya ditunjuk [1]. Pointer biasanya dideklarasikan ```type *nama_variabel;```
 
+#### 3. Pointer dan Array
+Array da pointer mempunyai hubungan yanag kuat karena banyak operasi yang bisa dilakukan menggunakan array juga bisa dilakukan menggunakan pointer [1].
 
-### F.
+#### 4. Pointer dan String
+
+##### a. String
+String adalah bentuk dari data yang sering digunakan pada bahasa pemrograman untuk mengolah data/teks/array dari karakter [1].
+
+##### b. Pointer dan String
+Pada dasarnya, string adalah array dari kumpulan karakter yang biasanya diakgiri dengan karakter khusus \0 [1]. Pada deklarasi penggunaan array ```( amessage[])``` isi array dapat diubah meski alamat penyimpanannya tetap, tetapi pada deklarasi yang menggunakan pointer ```( *pmessage)``` arah petunjuk alamanya dipindahkan ke mana saja tetapi isi dari teksnya bersifat konstan [1].
+
+### C. Fungsi
+Fungsi adalah blok dari kode yang dirancang untuk menjalankan tujuan khusus yang bertujuan agar program menjadi lebih tersruktur dan dapat mengurangi pengulangan/duplikasi kode [1]. Umumnya, fungsi memerlukan masukan berupa parameter yang selanjutnya dioleh oleh fungsi dan menghasilkan sebuah nilai (nilai balik fungsi) [1]. bentuk umum dari fungsi sebagai berikut:
+```
+tipe_keluaran nama_fungsi(daftar_parameter) {
+    blok pernyataan fungsi;
+}
+```
+
+### D. Prosedure
+Dalam bahasa C++, prosedure adalah istilah yang digunakan untuk fungsi yang tidak mengembalikan nilai atau lebih dikenal sebagai fungsi void [1]. Fungsi ini akan melakukan tugas tertentu tetapi tidak mengembalikan nilai kepada pemanggilnya [1]. Bentuk umum prosedure sebagai berikut:
+```
+void nama_prosedure (daftar_parameter) {
+    blok pernyataan prosedure;
+}
+```
+
+### E. Parameter Fungsi
+
+#### 1. Parameter Formal dan Aktual
+Parameter formal adalah variabel yang ada di daftar parameter saat mendefinisikan fungsi [1]. Contohnya pada kode dibawah, x dan y adalah parameter formal.
+```
+float perkalian (float x, float y) {
+    return (x * y);
+}
+```
+
+Parameter aktual adalah paramaeter yang tidak selamanya menyataakan variabel yang dipakai untuk memanggil fungsi [1]. Contohnya ada pada kode dibawah ini, a dan b adalah parameter aktual.
+```
+x = perkalian(a, b);
+y = perkalian(20, 30);
+```
+
+#### 2. Cara Melewatkan Parameter
+
+##### a. Call by Value 
+Pada call by value, nilai parameter aktual akan disalin dalam parameter formal, jadi parameter aktual tidak berubah walaupun parameter formalnya berubah [1].
+
+##### b. Call by Pointer
+Call by pointer adalah cara untuk melewatkan alamat suatu variabel ke dalam suatu fungsi [1]. Cara ini bisa mengubah variabel yang ada diluar fungsi [1].
+Contoh penulisan call by pointer sebagai berikut:
+```
+tukar(int *px, int *py) {
+    int temp;
+    temp = *px;
+    *px = *py;
+    *py = temp;
+    ... ... 
+}
+```
+Cara memanggilnya dengan ```tukar(&a, &b);```
+
+##### c. Call by Reference
+Call by reference berfungsi untuk melewatkan alamat suatu variabel dalam suatu fungsi yang dapat mengubah nilai  variabel aktual yang dilewatkan ke dalam fungsi [1]. Cara ini bisa mengubah variabel yang ada diluar fungsi [1]. Contoh penulisan call by reference sebagai berikut:
+```
+tukar(int &px, int &py) {
+    int temp;
+    temp = px;
+    px = py;
+    py = temp;
+    ... ... 
+}
+```
+Cara memanggilnya dengan ```tukar(a, b);```
+ 
 
 ## Guided 
 
@@ -51,10 +133,10 @@ int main() {
 ```
 ### Output guided 1 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-1.png)
 
-penjelasan singkat guided 1
+Program ini menggunakan array satu dimensi bertipe integer bernama ```nilai``` berukuran 5 yang menyimpan lima angka nilai ujian. Program ini menginisialisasi nilai secara manual untuk setiap indeks, lalu menampilkan seluruh isi array tersebut secara berurutan menggunakan perulangan ```for```, dimulai dari nilai ke-1 hingga nilai ke-5.
 
 ### 2. Array Dua Dimensi
 
@@ -84,10 +166,10 @@ int main() {
 ```
 ### Output guided 2 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 2](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-2.png)
 
-penjelasan singkat guided 2
+Program ini menggunakan array dua dimensi bertipe integer bernama ```nilai`` berukuran 3 x 3 yang menyimpan sembilan angka dalam bentuk baris dan kolom. Program ini menampilkan seluruh isi array tersebut dalam bentuk matriks menggunakan perulangan bersarang (nested loop), lalu secara spesifik menampilkan kembali nilai yang berada di baris indeks 1 dan kolom indeks 2.
 
 ### 3. Array Berdimensi Banyak
 
@@ -115,10 +197,10 @@ int main() {
 ```
 ### Output guided 3 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 3](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-3.png)
 
-penjelasan singkat guided 3
+Program ini menggunakan array tiga dimensi bertipe integer bernama ```data``` berukuran 2 x 2 x 3 yang menyimpan dua belas angka dalam bentuk blok, baris, dan kolom. Program ini langsung menampilkan nilai spesifik yang berada di blok indeks 0, baris indeks 1, dan kolom indeks 2.
 
 ### 4. Alamat / Addres
 
@@ -144,10 +226,10 @@ int main() {
 ```
 ### Output guided 4 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 4](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-4.png)
 
-penjelasan singkat guided 4
+Program ini menggunakan array satu dimensi bertipe karakter bernama ```arr``` berukuran 6 yang menyimpan enam huruf. Program ini menginisialisasi setiap indeks secara manual, lalu menampilkan nilai spesifik yang berada di indeks 3 yaitu karakter 'b', serta menampilkan alamat memori dari elemen yang berada di indeks 4 menggunakan operator reference (```&```).
 
 ### 5. Pointer
 
@@ -172,10 +254,11 @@ int main() {
 ```
 ### Output guided 5 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 5](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-5.png)
 
-penjelasan singkat guided 5
+Program ini menggunakan sebuah variabel integer bernama ```angka``` dan sebuah variabel pointer bertipe integer bernama ```pointer```. Program ini menginisialisasi nilai ```angka``` dengan 100, lalu menyimpan alamat memori dari variabel ```angka``` ke dalam variabel ```pointer``` menggunakan operator reference (```&```). Program kemudian menampilkan nilai asli dari variabel ```angka```, alamat memorinya, nilai alamat yang disimpan oleh ```pointer```, serta nilai yang ditunjuk oleh ```pointer``` menggunakan operator dereference (```*```)
+
 ### 6. Function
 
 ```C++
@@ -213,10 +296,11 @@ int main() {
 ```
 ### Output guided 6 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 6](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-6.png)
 
-penjelasan singkat guided 6
+Program ini menggunakan sebuah fungsi bertipe integer bernama ```maks3``` yang menerima tiga parameter nilai untuk mencari angka terbesar di antara ketiganya. Program ini meminta pengguna memasukkan tiga nilai secara berurutan, lalu memanggil fungsi tersebut untuk memproses dan menampilkan nilai maksimum dari ketiga angka yang dimasukkan
+
 ### 7. Procedure
 
 ```C++
@@ -234,10 +318,10 @@ int main() {
 ```
 ### Output guided 7 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 7](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-7.png)
 
-penjelasan singkat guided 7
+Program ini menggunakan sebuah prosedur (fungsi void) bernama ```sapa``` yang tidak menerima parameter dan tidak mengembalikan nilai. Program ini langsung memanggil prosedur tersebut dari dalam fungsi ```main``` untuk menampilkan kalimat sapaan "Selamat datang di praktikum struktur data" ke layar.
 
 ### 8. Call by Value / Pointer / Reference
 
@@ -271,10 +355,10 @@ int main() {
 ```
 ### Output guided 8 :
 
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+##### Output 
+![Screenshot Output Guided 8](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-8.png)
 
-penjelasan singkat guided 8
+Program ini menggunakan sebuah prosedur bernama ```tukar``` yang menerima dua parameter integer untuk menukar nilai di dalamnya. Program ini mendeklarasikan dua variabel ```a``` dan ```b```, lalu menampilkan nilainya sebelum dan sesudah memanggil prosedur ```tukar```, namun karena parameter yang digunakan adalah pass by value, nilai variabel asli di fungsi main tidak akan berubah.
 
 ## Unguided 
 
@@ -347,15 +431,15 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Unguided/Output_Unguided-1.1.png)
 
 ##### Output 2
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_2](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Unguided/Output_Unguided-1.2.png)
 
 ##### Output 3
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_3](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Unguided/Output_Unguided-1.3.png)
 
-penjelasan unguided 1 
+Program ini menggunakan tiga buah array dua dimensi bertipe integer bernama ```matA```, ```matB```, dan ```hasil``` yang masing-masing berukuran 3 x 3 untuk menyimpan elemen matriks. Program ini meminta pengguna memasukkan elemen untuk kedua matriks, lalu menampilkan menu pilihan operasi aritmatika (penjumlahan, pengurangan, atau perkalian). Program akan memproses operasi yang dipilih menggunakan perulangan bersarang, menyimpannya ke dalam array ```hasil```, dan menampilkan matriks akhirnya dalam bentuk baris dan kolom.
 
 ### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel 
 
@@ -393,19 +477,16 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Unguided/Output_Unguided-2.png)
 
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 2
+Program ini menggunakan sebuah prosedur bernama ```tukar``` yang menerima tiga parameter integer dengan teknik pass by reference (menggunakan simbol```&```) untuk menukar nilai di dalamnya secara berantai. Program ini menginisialisasi tiga variabel ```a```, ```b```, dan ```c``` dengan nilai awal, lalu menampilkan nilainya sebelum dan sesudah memanggil prosedur ```tukar```. Karena menggunakan reference, nilai variabel asli di fungsi ```main``` akan benar-benar berubah sesuai dengan logika rotasi yang diterapkan
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut :  arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55} Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini : 
---- Menu Program Array ---  
-• Tampilkan isi array  
-• cari nilai maksimum
-• cari nilai minimum  
-• Hitung nilai rata - rata
+--- Menu Program Array ---  <br/>
+• Tampilkan isi array <br/>
+• cari nilai maksimum <br/>
+• cari nilai minimum <br/>
+• Hitung nilai rata - rata <br/>
 
 ```C++
 #include <iostream>
@@ -487,17 +568,16 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 3_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Unguided/Output_Unguided-3.1.png)
 
 ##### Output 2
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 3_2](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Unguided/Output_Unguided-3.2.png)
 
-penjelasan unguided 3
+Program ini menggunakan sebuah array satu dimensi bertipe integer bernama ```arrA``` berukuran 10 yang menyimpan sepuluh angka, serta dua buah fungsi (```cariMinimum``` dan ```cariMaksimum```) dan satu prosedur (```hitungRataRata```) untuk memproses data tersebut. Program ini menampilkan menu interaktif menggunakan perulangan ```do-while``` dan ```switch-case```, yang memungkinkan pengguna untuk menampilkan isi array, mencari nilai minimum, mencari nilai maksimum, atau menghitung nilai rata-rata, dan akan terus berulang hingga pengguna memilih menu keluar
 
 ## Kesimpulan
-...
+Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengolah data menggunakan array, pointer, function, dan posedure. Array juga dapat digunakan untuk menyimpan data dalam bentuk satu dimensi, dua dimensi, dan dimensi banyak. Sedangkann function dan procedure digunakan untuk menjalankan proses tertentu dalam program. Penggunaan call by pointer dan call by reference sapaat digunakan untuk mengubah nilai variabel tanpa harus konsep dari acara. Penggunaan beberapa konsep ini juga bisa membantu membuat program menjadi lebih terstruktur dan sesuai dengan kebutuhan.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] Tim Asisten Praktikum. (t.t.). Modul 1: Code Blocks IDE & Pengenalan Bahasa C++ (Bagian Pertama). Telkom University. 
+<br>[2] Indahyanti, Uce., & Rahmawati Yunianita. (2020). Buku Ajar Algoritma Dan Pemrograman Dalam Bahasa C++. Sidoarjo: Umsida Press. Diakses melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
