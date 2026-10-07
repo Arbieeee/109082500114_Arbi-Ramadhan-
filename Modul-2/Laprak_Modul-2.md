@@ -169,7 +169,7 @@ int main() {
 ##### Output 
 ![Screenshot Output Guided 2](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-2/Guided/Output_guided-2.png)
 
-Program ini menggunakan array dua dimensi bertipe integer bernama ```nilai`` berukuran 3 x 3 yang menyimpan sembilan angka dalam bentuk baris dan kolom. Program ini menampilkan seluruh isi array tersebut dalam bentuk matriks menggunakan perulangan bersarang (nested loop), lalu secara spesifik menampilkan kembali nilai yang berada di baris indeks 1 dan kolom indeks 2.
+Program ini menggunakan array dua dimensi bertipe integer bernama ```nilai``` berukuran 3 x 3 yang menyimpan sembilan angka dalam bentuk baris dan kolom. Program ini menampilkan seluruh isi array tersebut dalam bentuk matriks menggunakan perulangan bersarang (nested loop), lalu secara spesifik menampilkan kembali nilai yang berada di baris indeks 1 dan kolom indeks 2.
 
 ### 3. Array Berdimensi Banyak
 
