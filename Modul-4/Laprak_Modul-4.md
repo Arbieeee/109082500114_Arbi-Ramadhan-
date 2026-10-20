@@ -91,7 +91,6 @@ Semua operasi dasar yang sudah dijelaskan di atas adalah operasi primitif [1]. P
 
 ## Guided 
 
-### 1. ...
 #### File list.h
 
 ```C++
@@ -373,7 +372,54 @@ Program ini mengimplementasikan struktur data Single Linked List untuk menyimpan
 
 ## Unguided 
 
-### 1. (isi dengan soal unguided 1)
+### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h” 
+```C++
+Type infotype : int
+Type address : pointer to ElmList
+Type ElmList <
+    info : infotype
+    next : address
+>
+Type List : < First : address >
+procedure CreateList(input/output L : List)
+function alokasi (x : infotype)->address
+procedure dealokasi(input/output P : address)
+procedure printInfo(input L : List)
+procedure insertFirst(input/output L : List, input P : address)
+```
+Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file ```"Singlylist.cpp"```
+Kemudian buat program utama didalam file ```"main.cpp"``` dengan implementasi sebagai berikut :
+
+```C++
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    createList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L,P1);
+
+    P2 = alokasi(0);
+    insertFirst(L,P2);
+
+    P3 = alokasi(8);
+    insertFirst(L,P3);
+
+    P4 = alokasi(12);
+    insertFirst(L,P4);
+
+    P5 = alokasi(9);
+    insertFirst(L,P5);
+
+    printInfo(L);
+    return 0;
+}
+```
+Output yang diharapkan:
+```
+9 12 8 0 2
+```
+
 #### File singlylist.h
 
 ```C++
@@ -479,14 +525,19 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1]()
-
-##### Output 2
-![Screenshot Output Unguided 1_2]()
+![Screenshot Output Unguided 1_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-4/Unguided/unguided-1/Output_unguided-1.png)
 
 Program ini mengimplementasikan struktur data Single Linked List sederhana untuk menyimpan bilangan bulat (integer) yang terdiri dari tiga file. File ```SinglyList.h``` mendeklarasikan struktur ```ElmList``` (node) dan ```List```, serta prototipe fungsinya. File implementasi berisi logika untuk membuat list kosong (```createList```), mengalokasikan memori node baru (```alokasi```), menyisipkan node di awal list (```insertFirst```), dan mencetak seluruh isi list (```printInfo```). Pada program utama (```main```), program melakukan alokasi 5 node secara berurutan (berisi angka 2, 0, 8, 12, dan 9) lalu memasukkannya satu per satu ke dalam list menggunakan ```insertFirst```. Karena menggunakan metode ```insert``` di awal, urutan angka yang tampil saat ```printInfo``` dipanggil akan terbalik dari urutan inputnya, yaitu menjadi 9, 12, 8, 0, dan 2.
 
-### 2. (isi dengan soal unguided 2)
+### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList(). Output yang diharapkan : 
+```
+12 0
+Jumlah node : 2
+
+- List Berhasil Terhapus -
+Jumlah node : 0
+```
+
 #### File singlylist.h
 
 ```C++
@@ -657,10 +708,7 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1]()
-
-##### Output 2
-![Screenshot Output Unguided 2_2]()
+![Screenshot Output Unguided 2_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-4/Unguided/unguided-2/Output_unguided-2.png)
 
 Program ini mengimplementasikan Single Linked List untuk menyimpan bilangan bulat dalam tiga file. File header mendeklarasikan struktur dan fungsi, file implementasi berisi logika dasar (buat list, alokasi memori, insert di awal, cetak) serta operasi hapus (awal, akhir, tengah, dan hapus semua). Pada program utama, lima angka dimasukkan berurutan menggunakan ```insertFirst``` sehingga urutannya terbalik di dalam list. Program lalu menguji penghapusan data di awal, akhir, dan tengah, mencetak sisa data beserta jumlah node, dan diakhiri dengan ```deleteList``` untuk membersihkan seluruh memori
 
@@ -669,6 +717,4 @@ Program ini mengimplementasikan Single Linked List untuk menyimpan bilangan bula
 Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengelola data secara dinamis menggunakan struktur data Single Linked List yang terdiri dari kumpulan node (struct). Setiap node menyimpan data dan pointer (next) yang saling terhubung. Penggunaan pointer dan alokasi memori dinamis (seperti new dan delete) sangat penting untuk menambah (insert), menghapus (delete), dan menelusuri (traversal) data di dalam list. Penggunaan call by reference pada parameter fungsi juga memudahkan dalam mengubah kondisi list secara langsung dari program utama. Selain itu, ketelitian dalam penulisan sintaks dan urutan penghapusan memori (dealokasi) sangat diperlukan agar program tidak mengalami error atau kebocoran memori (memory leak). Penggunaan beberapa konsep ini membuat program pengolahan data menjadi lebih terstruktur, fleksibel, dan sesuai dengan kebutuhan
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>
+[[1] Tim Asisten Praktikum. (t.t.). Modul 4: Singly Linked List (Bagian Pertama). Telkom University.
