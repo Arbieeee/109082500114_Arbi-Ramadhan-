@@ -91,7 +91,7 @@ Semua operasi dasar yang sudah dijelaskan di atas adalah operasi primitif [1]. P
 
 ## Guided 
 
-#### File list.h
+#### a. File list.h
 
 ```C++
 #ifndef LIST_H
@@ -140,7 +140,7 @@ void deleteList(LinkedList & List);
 #endif
 ```
 
-#### File list.cpp
+#### b. File list.cpp
 
 ```C++
 #include "list.h"
@@ -317,7 +317,8 @@ void deleteList(LinkedList &List) {
 }
 ```
 
-#### File main.cpp
+#### c. File main.cpp
+
 ```C++
 #include "list.h"
 
@@ -420,7 +421,7 @@ Output yang diharapkan:
 9 12 8 0 2
 ```
 
-#### File singlylist.h
+#### a. File singlylist.h
 
 ```C++
 #ifndef SINGLYLIST_H
@@ -449,7 +450,7 @@ void printInfo(List L);
 #endif
 ```
 
-#### File singlylist.cpp
+#### b. File singlylist.cpp
 
 ```C++
 #include "SinglyList.h"
@@ -487,7 +488,7 @@ void printInfo(List L) {
 }
 ```
 
-#### File main.cpp
+#### c. File main.cpp
 
 ```C++
 #include <iostream>
@@ -538,7 +539,7 @@ Jumlah node : 2
 Jumlah node : 0
 ```
 
-#### File singlylist.h
+#### a. File singlylist.h
 
 ```C++
 #ifndef SINGLYLIST_H
@@ -573,7 +574,7 @@ void deleteList(List &L);
 #endif
 ```
 
-#### File singlylist.cpp
+#### b. File singlylist.cpp
 
 ```C++
 #include "SinglyList.h"
@@ -664,7 +665,7 @@ void deleteList(List &L) {
 }
 ```
 
-#### File main.cpp
+#### c. File main.cpp
 
 ```C++
 #include "SinglyList.h"
@@ -717,4 +718,4 @@ Program ini mengimplementasikan Single Linked List untuk menyimpan bilangan bula
 Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengelola data secara dinamis menggunakan struktur data Single Linked List yang terdiri dari kumpulan node (struct). Setiap node menyimpan data dan pointer (next) yang saling terhubung. Penggunaan pointer dan alokasi memori dinamis (seperti new dan delete) sangat penting untuk menambah (insert), menghapus (delete), dan menelusuri (traversal) data di dalam list. Penggunaan call by reference pada parameter fungsi juga memudahkan dalam mengubah kondisi list secara langsung dari program utama. Selain itu, ketelitian dalam penulisan sintaks dan urutan penghapusan memori (dealokasi) sangat diperlukan agar program tidak mengalami error atau kebocoran memori (memory leak). Penggunaan beberapa konsep ini membuat program pengolahan data menjadi lebih terstruktur, fleksibel, dan sesuai dengan kebutuhan
 
 ## Referensi
-[[1] Tim Asisten Praktikum. (t.t.). Modul 4: Singly Linked List (Bagian Pertama). Telkom University.
+[1] Tim Asisten Praktikum. (t.t.). Modul 4: Singly Linked List (Bagian Pertama). Telkom University.
