@@ -715,7 +715,7 @@ Program ini mengimplementasikan Single Linked List untuk menyimpan bilangan bula
 
 
 ## Kesimpulan
-Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengelola data secara dinamis menggunakan struktur data Single Linked List yang terdiri dari kumpulan node (struct). Setiap node menyimpan data dan pointer (next) yang saling terhubung. Penggunaan pointer dan alokasi memori dinamis (seperti new dan delete) sangat penting untuk menambah (insert), menghapus (delete), dan menelusuri (traversal) data di dalam list. Penggunaan call by reference pada parameter fungsi juga memudahkan dalam mengubah kondisi list secara langsung dari program utama. Selain itu, ketelitian dalam penulisan sintaks dan urutan penghapusan memori (dealokasi) sangat diperlukan agar program tidak mengalami error atau kebocoran memori (memory leak).
+Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengelola data secara dinamis menggunakan struktur data Single Linked List yang terdiri dari kumpulan node (struct). Setiap node menyimpan data dan pointer (next) yang saling terhubung. Penggunaan pointer dan alokasi memori dinamis (seperti new dan delete) sangat penting untuk menambah (insert), menghapus (delete), dan menelusuri (traversal) data di dalam list. Penggunaan call by reference pada parameter fungsi juga memudahkan dalam mengubah kondisi list secara langsung dari program utama.
 
 ## Referensi
 [1] Tim Asisten Praktikum. (t.t.). Modul 4: Singly Linked List (Bagian Pertama). Telkom University.
