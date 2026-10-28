@@ -504,14 +504,14 @@ int main() {
 File ```listBuah.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. Struct ```buah``` digunakan untuk menyimpan nama, jumlah, dan harga buah, sedangkan struct ```node``` berisi ```isidata``` untuk menyimpan data buah dan ```next``` untuk menunjuk ke node berikutnya. Struct ```linkedlist``` berisi ```first``` yaitu alamat node pertama, dan list dianggap kosong jika ```first``` bernilai ```Nil```. Di bagian bawah terdapat prototype operasi dasar, update, dan searching.
 
 #### b. File listBuah.cpp
-File ```listBuah.cpp``` berisi implementasi dari semua fungsi yang dideklarasikan di ```listBuah.h.``` Operasi dasarnya meliputi membuat list kosong, mengalokasi dan mendealokasi node, serta menampilkan list dan menghitung jumlah node. Operasi insert dan delete dapat dilakukan di awal, di akhir, atau setelah node tertentu. Operasi update mengganti data node pertama, terakhir, atau setelah node tertentu melalui input, sedangkan operasi searching mencari node berdasarkan nama, alamat, atau rentang harga. Seluruh operasi tersebut menelusuri list dari ```first``` sampai ```Nil```.
+File ```listBuah.cpp``` berisi implementasi dari semua fungsi yang dideklarasikan di ```listBuah.h```. Operasi dasarnya meliputi membuat list kosong, mengalokasi dan mendealokasi node, serta menampilkan list dan menghitung jumlah node. Operasi insert dan delete dapat dilakukan di awal, di akhir, atau setelah node tertentu. Operasi update mengganti data node pertama, terakhir, atau setelah node tertentu melalui input, sedangkan operasi searching mencari node berdasarkan nama, alamat, atau rentang harga. Seluruh operasi tersebut menelusuri list dari ```first``` sampai ```Nil```.
 
 #### c. File main.cpp
 File ```main.cpp``` adalah program utama untuk mencoba semua operasi pada list buah. Pertama dibuat lima node buah yang disisipkan sehingga urutannya menjadi Jeruk, Pir, Semangka, Apel, Durian. Setelah itu beberapa node diupdate, lalu dilakukan pencarian berdasarkan data, alamat, dan rentang harga. Kemudian node pertama, terakhir, dan node setelah Pir dihapus, dan terakhir seluruh list dihapus sehingga jumlah node menjadi 0.
 
 ## Unguided 
 
-### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”:
+### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file "Singlylist.h":
 ```C++
 Type infotype : int
 Type address : pointer to ElmList
@@ -527,8 +527,9 @@ procedure printInfo( input L : List )
 procedure insertFirst(input/output L : List, input P :address)
 ```
 Kemudian buat implementasi ADT Singly Linked list pada file "Singlylist.cpp". Adapun isi data
+![Screenshot Output Unguided 2_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-5/Gambar/Gambar-1.1.png)
 
-Cobalah hasil implementasi ADT pada file “main.cpp”
+Cobalah hasil implementasi ADT pada file "main.cpp"
 ```C++
 int main()
 {
@@ -560,27 +561,119 @@ Contoh output: ```9 12 8 0 2```
 #### a. File Singlylist.h
 
 ```C++
-source code unguided 1
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+typedef int infotype;
+typedef struct tElmList *address;
+
+struct tElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address First;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+#endif
 ```
 
 #### b. File Singlylist.cpp
 
 ```C++
-source code unguided 1
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.First = NULL;
+}
+
+address alokasi(infotype x) {
+    address P = new tElmList;
+    P->info = x;
+    P->next = NULL;
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = NULL;
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != NULL) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
 ```
 
 #### c. File main.cpp
 
 ```C++
-source code unguided 1
+#include <iostream>
+#include "Singlylist.h"
+
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5;
+    
+    P1 = NULL; P2 = NULL; P3 = NULL; P4 = NULL; P5 = NULL;
+
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    printInfo(L);
+
+    return 0;
+}
 ```
 
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-5/Unguided/unguided-1/Output_Unguided-1.1.png)
 
-penjelasan unguided 1 
+### Penjelasan 
+
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. Struct ```tElmList``` (node) digunakan untuk menyimpan ```info``` bertipe integer dan ```next``` untuk menunjuk ke node berikutnya. Struct ```List``` berisi ```First``` yaitu alamat node pertama, dan list dianggap kosong jika ```First``` bernilai ```NULL```. Di bagian bawah terdapat prototype operasi dasar seperti pembuatan list, alokasi/dealokasi memori, pencetakan, dan penyisipan di awal.
+
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi implementasi dari semua fungsi yang dideklarasikan di ```Singlylist.h```. Operasi dasarnya meliputi membuat list kosong (```CreateList```), mengalokasikan node baru ke memori (alokasi), dan mendealokasikan node agar tidak terjadi kebocoran memori (```dealokasi```), serta menampilkan seluruh isi list (```printInfo```). Operasi insert pada kode ini dikhususkan untuk menyisipkan node di awal list (```insertFirst```). Seluruh operasi penelusuran di dalam fungsi-fungsi tersebut dilakukan dengan cara mengunjungi node dari First sampai ```NULL``.
+
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba operasi dasar pada senarai berantai. Pertama, dibuat lima node angka yang disisipkan satu per satu ke dalam list menggunakan fungsi ```insertFirst```. Karena penyisipan dilakukan di awal, urutan akhir node di dalam list menjadi terbalik dari urutan inputnya, yaitu 9, 12, 8, 0, dan 2. Setelah semua node dimasukkan, fungsi ```printInfo(L)``` dipanggil untuk menampilkan urutan data tersebut ke layar.
 
 ### 2. Carilah elemen dengan info 8 dengan membuat fungsi baru.
 ```fungsi findElm( L : List, x : infotype ) : address```
@@ -590,27 +683,146 @@ Contoh output: ```8 ditemukan dalam list```
 #### a. File Singlylist.h
 
 ```C++
-source code unguided 2
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+typedef int infotype;
+typedef struct tElmList *address;
+
+struct tElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address First;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+address findElm(List L, infotype x);
+
+#endif
 ```
 
 #### b. File Singlylist.cpp
 
 ```C++
-source code unguided 2
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.First = NULL;
+}
+
+address alokasi(infotype x) {
+    address P = new tElmList;
+    if (P != NULL) {
+        P->info = x;
+        P->next = NULL;
+    }
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = NULL;
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != NULL) {
+        cout << P->info;
+        if (P->next != NULL) {
+            cout << " ";
+        }
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.First;
+    
+    while (P != NULL) {
+        if (P->info == x) {
+            return P;
+        }
+        P = P->next;
+    }
+    
+    return NULL;
+}
 ```
 
 #### c. File main.cpp
 
 ```C++
-source code unguided 2
+#include "Singlylist.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    List L;
+    address P1, P2, P3, P4, P5 = NULL;
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    infotype searchValue = 8;
+    address foundAddress = findElm(L, searchValue);
+
+    if (foundAddress != NULL) {
+        cout << foundAddress->info << " ditemukan dalam list" << endl;
+    } else {
+        cout << "Elemen tidak ditemukan" << endl;
+    }
+
+    return 0;
+}
 ```
 
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-5/Unguided/unguided-2/Output_Unguided-2.1.png)
 
 ### Penjelasan
+
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. Struct ```tElmList``` digunakan sebagai node untuk menyimpan nilai ```info``` bertipe integer dan ```next``` yang menunjuk ke node berikutnya. Struct ```List``` berisi ```First``` yaitu alamat node pertama, dan list dianggap kosong jika ```First``` bernilai ```NULL```. Di bagian bawah terdapat prototype operasi dasar (pembuatan list, alokasi, dealokasi, print, insert di awal) serta operasi pencarian elemen (```findElm```).
+
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi implementasi dari semua fungsi yang dideklarasikan di ```Singlylist.h```. Operasi dasarnya meliputi membuat list kosong, mengalokasikan dan mendealokasikan node, serta menampilkan isi list. Operasi insert (```insertFirst```) dilakukan dengan menyisipkan node baru di awal list. Operasi searching (```findElm```) mencari node berdasarkan nilai ```info``` yang dicari. Seluruh operasi tersebut menelusuri list dari ```First``` sampai ```NULL```; jika fungsi pencarian menemukan nilai yang cocok, ia mengembalikan alamat node tersebut, dan jika tidak, mengembalikan ```NULL```.
+
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba operasi dasar dan pencarian pada list. Pertama dibuat lima node angka yang disisipkan dengan ```insertFirst``` sehingga urutannya di dalam list menjadi ```9, 12, 8, 0, 2```. Setelah itu dilakukan pencarian node dengan nilai 8 menggunakan fungsi ```findElm```. Jika node ditemukan, program mencetak nilai ```info`` dari node tersebut beserta pesan bahwa elemen ditemukan, dan jika tidak ditemukan akan mencetak pesan bahwa elemen tidak ada di dalam list.
 
 ### 3. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).
 Contoh output: ```Total info dari kelima elemen adalah 31```
@@ -618,26 +830,150 @@ Contoh output: ```Total info dari kelima elemen adalah 31```
 #### a. File Singlylist.h
 
 ```C++
-source code unguided 3
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+typedef int infotype;
+typedef struct tElmList *address;
+
+struct tElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address First;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+address findElm(List L, infotype x);
+
+infotype sumInfo(List L);
+
+#endif
 ```
 
 #### b. File Singlylist.cpp
 
 ```C++
-source code unguided 3
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.First = NULL;
+}
+
+address alokasi(infotype x) {
+    address P = new tElmList;
+    if (P != NULL) {
+        P->info = x;
+        P->next = NULL;
+    }
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = NULL;
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != NULL) {
+        cout << P->info;
+        if (P->next != NULL) {
+            cout << " ";
+        }
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.First;
+    while (P != NULL) {
+        if (P->info == x) {
+            return P;
+        }
+        P = P->next;
+    }
+    return NULL;
+}
+
+infotype sumInfo(List L) {
+    infotype total = 0;
+    address P = L.First;
+    
+    while (P != NULL) {
+        total += P->info;
+        P = P->next;
+    }
+    
+    return total;
+}
 ```
 
 #### c. File main.cpp
 
 ```C++
-source code unguided 3
+#include "Singlylist.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    List L;
+    address P1, P2, P3, P4, P5 = NULL;
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    infotype total = sumInfo(L);
+    cout << "Total info dari kelima elemen adalah " << total << endl;
+
+    return 0;
+}
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 3_1](https://github.com/Arbieeee/109082500114_Arbi-Ramadhan-/blob/main/Modul-5/Unguided/unguided-3/Output_Unguided-3.1.png)
 
 ### Penjelasan
+
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. Struct ```tElmList``` (node) digunakan untuk menyimpan ```info``` bertipe integer dan next untuk menunjuk ke node berikutnya. Struct ```List``` berisi ```First``` yaitu alamat node pertama, dan list dianggap kosong jika First bernilai ```NULL```. Di bagian bawah terdapat prototype operasi dasar (pembuatan list, alokasi, dealokasi, cetak, insert di awal), operasi pencarian (```findElm```), serta operasi penjumlahan seluruh data (```sumInfo```).
+
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi implementasi dari semua fungsi yang dideklarasikan di ```Singlylist.h```. Operasi dasarnya meliputi membuat list kosong, mengalokasikan dan mendealokasikan node, serta menampilkan isi list. Operasi insert (```insertFirst```) menyisipkan node baru di awal list. Operasi searching (```findElm```) mencari node berdasarkan nilai ```info```. Terdapat pula operasi perhitungan (```sumInfo```) yang menjumlahkan seluruh nilai ```info``` dari setiap node. Seluruh operasi tersebut menelusuri ```list``` dari ```First``` sampai ```NULL```; fungsi ```sumInfo``` mengembalikan total penjumlahan, sedangkan ```findElm``` mengembalikan alamat node jika ditemukan atau ```NULL``` jika tidak.
+
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba operasi perhitungan total pada ```list```. Pertama dibuat lima node angka yang disisipkan dengan ```insertFirst``` sehingga urutannya di dalam ```list``` menjadi ```9, 12, 8, 0, 2```. Setelah itu, fungsi ```sumInfo``` dipanggil untuk menghitung total dari kelima elemen tersebut. Hasil perhitungan (yaitu ```31```).
 
 ## Kesimpulan
 Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa singly linked list adalah struktur data yang terdiri dari node-node yang saling terhubung melalui pointer, dan setiap node hanya memiliki satu pointer ke node berikutnya. Karena menggunakan alokasi memori dinamis, jumlah node dapat bertambah atau berkurang sesuai kebutuhan. Operasi dasarnya, yaitu insert, delete, update, dan searching, dilakukan dengan mengatur pointer ```next``` dan menelusuri list dari ```first``` sampai ```Nil```. Seluruh operasi tersebut dapat disusun sebagai ADT, dengan deklarasi pada ```file .h``` dan implementasi pada ```file .cpp```.
