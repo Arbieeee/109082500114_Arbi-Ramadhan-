@@ -29,7 +29,15 @@ address pop(address P){
     return P;
 }
 ```
-
+### D. Primitif-Primitif dalam Stack <br/>
+Primitif yang ada dalam stack pada dasarnya sama dengan primitif pada list lainnya, tetapi jumlahnya lebih sedikit karena stack hanya mengoperasikan elemen yang berada di bagian paling atas [1].<br>
+Primitif-primitif dalam stack diantaranya:
+1. ```createStack()```
+2. ```isEmpty()```
+3. ```alokasi()```
+4. ```dealokasi()```
+5. fungsi-fungsi pencarian
+6. fungsi primitif lainnya
 
 ## Guided 
 
